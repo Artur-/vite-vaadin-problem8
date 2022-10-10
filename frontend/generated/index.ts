@@ -1,1 +1,1 @@
-import "../../target/frontend/generated-flow-imports"
+import "./generated-flow-imports"
