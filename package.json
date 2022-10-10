@@ -19,9 +19,7 @@
     "@vaadin/vaadin-themable-mixin": "23.3.0-alpha2",
     "construct-style-sheets-polyfill": "3.1.0",
     "copy-to-clipboard": "^3.3.1",
-    "lit": "2.3.0",
-    "package-outside-npm": "file:package-outside-npm",
-    "package2-outside-npm": "./package2-outside-npm"
+    "lit": "2.3.0"
   },
   "devDependencies": {
     "@rollup/plugin-replace": "3.1.0",
@@ -43,8 +41,6 @@
     "@testscope/button": "$@testscope/button",
     "@vaadin/bundles": "$@vaadin/bundles",
     "copy-to-clipboard": "$copy-to-clipboard",
-    "package-outside-npm": "$package-outside-npm",
-    "package2-outside-npm": "$package2-outside-npm",
     "glob": "$glob",
     "mkdirp": "$mkdirp",
     "rollup-plugin-brotli": "$rollup-plugin-brotli",
