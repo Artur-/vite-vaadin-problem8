@@ -1,0 +1,18 @@
+{
+  "productionMode": false,
+  "useDeprecatedV14Bootstrapping": false,
+  "eagerServerLoad": false,
+  "npmFolder": "/Users/artur/workspace/vaadin/flow/flow-tests/test-frontend/vite-basics",
+  "node.version": "v18.9.1",
+  "node.download.root": "https://nodejs.org/dist/",
+  "generatedFolder": "/Users/artur/workspace/vaadin/flow/flow-tests/test-frontend/vite-basics/target/frontend",
+  "frontendFolder": "/Users/artur/workspace/vaadin/flow/flow-tests/test-frontend/vite-basics/frontend",
+  "connect.javaSourceFolder": "/Users/artur/workspace/vaadin/flow/flow-tests/test-frontend/vite-basics/src/main/java",
+  "javaResourceFolder": "/Users/artur/workspace/vaadin/flow/flow-tests/test-frontend/vite-basics/src/main/resources",
+  "connect.applicationProperties": "/Users/artur/workspace/vaadin/flow/flow-tests/test-frontend/vite-basics/src/main/resources/application.properties",
+  "connect.openApiFile": "/Users/artur/workspace/vaadin/flow/flow-tests/test-frontend/vite-basics/target/generated-resources/openapi.json",
+  "project.frontend.generated": "/Users/artur/workspace/vaadin/flow/flow-tests/test-frontend/vite-basics/frontend/generated",
+  "pnpm.enable": true,
+  "require.home.node": false,
+  "build.folder": "target"
+}

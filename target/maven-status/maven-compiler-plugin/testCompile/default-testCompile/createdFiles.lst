@@ -1,0 +1,8 @@
+com/vaadin/viteapp/ExternalPackageIT.class
+com/vaadin/viteapp/BundlesIT.class
+com/vaadin/viteapp/BasicsIT.class
+com/vaadin/viteapp/ThemeReloadIT.class
+com/vaadin/viteapp/PostinstallIT.class
+com/vaadin/viteapp/ViteDevModeIT.class
+com/vaadin/viteapp/ThemeIT.class
+com/vaadin/viteapp/FileAccessIT.class
