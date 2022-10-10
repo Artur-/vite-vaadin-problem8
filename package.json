@@ -6,10 +6,6 @@
   },
   "dependencies": {
     "@polymer/polymer": "3.5.1",
-    "@testscope/all": "./vite-test-assets/packages/@testscope/all",
-    "@testscope/button": "./vite-test-assets/packages/@testscope/button",
-    "@testscope/map": "./vite-test-assets/packages/@testscope/map",
-    "@vaadin/bundles": "./vite-test-assets/packages/@vaadin/bundles",
     "@vaadin/common-frontend": "0.0.17",
     "@vaadin/flow-frontend": "./target/flow-frontend",
     "@vaadin/polymer-legacy-adapter": "23.3.0-alpha2",
@@ -39,8 +35,6 @@
     "workbox-precaching": "6.5.0"
   },
   "overrides": {
-    "@testscope/all": "$@testscope/all",
-    "@testscope/button": "$@testscope/button",
     "@vaadin/bundles": "$@vaadin/bundles",
     "copy-to-clipboard": "$copy-to-clipboard",
     "package-outside-npm": "$package-outside-npm",
