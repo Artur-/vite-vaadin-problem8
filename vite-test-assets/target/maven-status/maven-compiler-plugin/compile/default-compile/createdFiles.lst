@@ -1,0 +1,4 @@
+com/vaadin/viteapp/views/template/TemplateView.class
+com/vaadin/viteapp/views/template/ReflectivelyReferencedComponent.class
+com/vaadin/viteapp/views/template/PolymerComponent.class
+com/vaadin/viteapp/views/template/LitComponent.class
