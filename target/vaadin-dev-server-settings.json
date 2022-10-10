@@ -1,5 +1,5 @@
 {
-  "frontendFolder": "/Users/artur/workspace/vaadin/flow/flow-tests/test-frontend/vite-basics/frontend",
+  "frontendFolder": "/Users/artur/test/vite-repro/frontend",
   "themeFolder": "themes",
   "themeResourceFolder": "/Users/artur/workspace/vaadin/flow/flow-tests/test-frontend/vite-basics/target/flow-frontend",
   "staticOutput": "/Users/artur/workspace/vaadin/flow/flow-tests/test-frontend/vite-basics/target/classes/META-INF/VAADIN/webapp/VAADIN/static",

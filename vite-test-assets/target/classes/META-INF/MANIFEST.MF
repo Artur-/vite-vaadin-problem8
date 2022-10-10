@@ -1,0 +1,32 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1665137611005
+Bundle-Description: Test modules for Flow
+Bundle-Developers: vaadin;organization=Vaadin;organizationUrl="http://
+ vaadin.com"
+Bundle-DocURL: https://vaadin.com/flow/flow-tests/test-frontend/vite-t
+ est-assets
+Bundle-License: "Apache License Version 2.0";link="http://www.apache.o
+ rg/licenses/LICENSE-2.0"
+Bundle-ManifestVersion: 2
+Bundle-Name: Vite test assets
+Bundle-SCM: url="https://github.com/vaadin/flow/flow-tests/test-fronte
+ nd/vite-test-assets",connection="scm:https:https://github.com/vaadin/
+ flow.git/flow-tests/test-frontend/vite-test-assets",developer-connect
+ ion="scm:git:git@github.com:vaadin/flow.git/flow-tests/test-frontend/
+ vite-test-assets",tag=HEAD
+Bundle-SymbolicName: vite-test-assets
+Bundle-Vendor: Vaadin Ltd
+Bundle-Version: 23.3.0.202210071013
+Created-By: 18.0.2.1 (Homebrew)
+Import-Package: com.vaadin.flow.component;version="[23.3,24)",com.vaad
+ in.flow.component.dependency;version="[23.3,24)",com.vaadin.flow.comp
+ onent.html;version="[23.3,24)",com.vaadin.flow.component.littemplate;
+ version="[23.3,24)",com.vaadin.flow.component.polymertemplate;version
+ ="[23.3,24)",com.vaadin.flow.component.template;version="[23.3,24)",c
+ om.vaadin.flow.router;version="[23.3,24)",com.vaadin.flow.shared;vers
+ ion="[23.3,24)",com.vaadin.flow.templatemodel;version="[23.3,24)",jav
+ a.lang,java.lang.invoke,org.vaadin.example.addon
+Private-Package: com.vaadin.viteapp.views.template
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=11))"
+Tool: Bnd-6.3.1.202206071316
+
