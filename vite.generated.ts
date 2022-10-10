@@ -8,8 +8,6 @@ import path from 'path';
 import { readFileSync, existsSync, writeFileSync } from 'fs';
 import * as net from 'net';
 
-import { processThemeResources } from './target/plugins/application-theme-plugin/theme-handle';
-import { rewriteCssUrls } from './target/plugins/theme-loader/theme-loader-utils';
 import settings from './target/vaadin-dev-server-settings.json';
 import { defineConfig, mergeConfig, PluginOption, ResolvedConfig, UserConfigFn, OutputOptions, AssetInfo, ChunkInfo } from 'vite';
 import { getManifest } from 'workbox-build';
@@ -18,8 +16,6 @@ import * as rollup from 'rollup';
 import brotli from 'rollup-plugin-brotli';
 import replace from '@rollup/plugin-replace';
 import checker from 'vite-plugin-checker';
-import postcssLit from './target/plugins/rollup-plugin-postcss-lit-custom/rollup-plugin-postcss-lit.js';
-
 const appShellUrl = '.';
 
 const frontendFolder = path.resolve(__dirname, settings.frontendFolder);
@@ -340,69 +336,6 @@ export { ${bindings.map(getExportBinding).join(', ')} };`;
   };
 }
 
-function themePlugin(opts): PluginOption {
-  const fullThemeOptions = {...themeOptions, devMode: opts.devMode };
-  return {
-    name: 'vaadin:theme',
-    config() {
-      processThemeResources(fullThemeOptions, console);
-    },
-    configureServer(server) {
-      function handleThemeFileCreateDelete(themeFile, stats) {
-        if (themeFile.startsWith(themeFolder)) {
-          const changed = path.relative(themeFolder, themeFile)
-          console.debug('Theme file ' + (!!stats ? 'created' : 'deleted'), changed);
-          processThemeResources(fullThemeOptions, console);
-        }
-      }
-      server.watcher.on('add', handleThemeFileCreateDelete);
-      server.watcher.on('unlink', handleThemeFileCreateDelete);
-    },
-    handleHotUpdate(context) {
-      const contextPath = path.resolve(context.file);
-      const themePath = path.resolve(themeFolder);
-      if (contextPath.startsWith(themePath)) {
-        const changed = path.relative(themePath, contextPath);
-
-        console.debug('Theme file changed', changed);
-
-        if (changed.startsWith(settings.themeName)) {
-          processThemeResources(fullThemeOptions, console);
-        }
-      }
-    },
-    async resolveId(id, importer) {
-      // force theme generation if generated theme sources does not yet exist
-      // this may happen for example during Java hot reload when updating
-      // @Theme annotation value
-      if (path.resolve(themeOptions.frontendGeneratedFolder, "theme.js") === importer &&
-            !existsSync(path.resolve(themeOptions.frontendGeneratedFolder, id))) {
-          console.debug('Generate theme file ' + id + ' not existing. Processing theme resource');
-          processThemeResources(fullThemeOptions, console);
-          return;
-      }
-      if (!id.startsWith(settings.themeFolder)) {
-        return;
-      }
-
-      for (const location of [themeResourceFolder, frontendFolder]) {
-        const result = await this.resolve(path.resolve(location, id));
-        if (result) {
-          return result;
-        }
-      }
-    },
-    async transform(raw, id, options) {
-      // rewrite urls for the application theme css files
-      const [bareId, query] = id.split('?');
-      if (!bareId?.startsWith(themeFolder) || !bareId?.endsWith('.css')) {
-        return;
-      }
-      const [themeName] = bareId.substring(themeFolder.length + 1).split('/');
-      return rewriteCssUrls(raw, path.dirname(bareId), path.resolve(themeFolder, themeName), console, opts);
-    }
-  };
-}
 function lenientLitImportPlugin(): PluginOption {
   return {
     name: 'vaadin:lenient-lit-import',
@@ -554,18 +487,7 @@ export const vaadinConfig: UserConfigFn = (env) => {
       devMode && showRecompileReason(),
       settings.offlineEnabled && buildSWPlugin({ devMode }),
       !devMode && statsExtracterPlugin(),
-      themePlugin({devMode}),
       lenientLitImportPlugin(),
-      postcssLit({
-        include: ['**/*.css', '**/*.css\?*'],
-        exclude: [
-          `${themeFolder}/**/*.css`,
-          `${themeFolder}/**/*.css\?*`,
-          `${themeResourceFolder}/**/*.css`,
-          `${themeResourceFolder}/**/*.css\?*`,
-          '**/*\?html-proxy*'
-        ]
-      }),
       {
         name: 'vaadin:force-remove-spa-middleware',
         transformIndexHtml: {

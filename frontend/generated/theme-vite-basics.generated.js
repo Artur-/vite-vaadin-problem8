@@ -52,7 +52,7 @@ export const injectGlobalCss = (css, target, first) => {
     target.adoptedStyleSheets = [...target.adoptedStyleSheets, sheet];
   }
 };
-import stylesCss from 'themes/vite-basics/styles.css?inline';
+//import stylesCss from 'themes/vite-basics/styles.css?inline';
 import { typography } from '@vaadin/vaadin-lumo-styles/typography.js';
 import { color } from '@vaadin/vaadin-lumo-styles/color.js';
 import { spacing } from '@vaadin/vaadin-lumo-styles/spacing.js';
