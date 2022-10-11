@@ -1,9 +1,6 @@
 {
   "name": "no-name",
   "license": "UNLICENSED",
-  "scripts": {
-    "postinstall": "node -e \"fs.writeFileSync('target/classes/main.postinstall', 'hello')\""
-  },
   "dependencies": {
     "@polymer/polymer": "3.5.1",
     "@vaadin/flow-frontend": "./flow-frontend",
@@ -12,6 +9,6 @@
     "@vaadin/vaadin-themable-mixin": "23.3.0-alpha2"
   },
   "devDependencies": {
-    "vite": "v3.1.0"
+    "vite": "v3.2.0-beta.1"
   }
 }
