@@ -9,9 +9,9 @@ Open http://localhost:5173/test.html
 
 The browser console will show
 ```
-Uncaught DOMException: Failed to execute 'define' on 'CustomElementRegistry': the name "dom-module" has already been used with this registry
+runrun
 ```
-which indicates that the dom-module JS from Polymer has been executed twice
+which indicates that the file in test-npm-package/multiple.js has been executed twice
 
 
 If you remove 

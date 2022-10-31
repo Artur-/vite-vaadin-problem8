@@ -1,0 +1,2 @@
+import 'test/intermediate.js';
+
